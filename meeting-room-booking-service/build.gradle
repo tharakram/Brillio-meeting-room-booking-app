@@ -1,0 +1,43 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+group 'brillio.booking.service'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+apply from: 'build-common.gradle'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web:${versions.springBoot}"
+
+    compile "org.springframework.boot:spring-boot-starter-jersey:${versions.springBoot}"
+
+    compile "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:${versions.jackson}"
+
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
+    // https://mvnrepository.com/artifact/com.codahale.metrics/metrics-core
+    compile "com.codahale.metrics:metrics-core:${versions.metricsCore}"
+    // https://mvnrepository.com/artifact/io.dropwizard.metrics/metrics-jersey2
+    compile "io.dropwizard.metrics:metrics-jersey2:${versions.metrics}"
+    // https://mvnrepository.com/artifact/io.swagger/swagger-annotations
+    compile "io.swagger:swagger-annotations:${versions.swagger}"
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compile "org.projectlombok:lombok:${versions.lombok}"
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}

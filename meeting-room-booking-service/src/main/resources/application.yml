@@ -1,0 +1,9 @@
+server:
+  port: 26780
+  context-path: /meeting-room-booking-service
+  tomcat:
+    max-hhtp-header-size: 65536
+
+logging.level:
+  com.brillio.booking.service: DEBUG
+  org.springframework.boot: DEBUG

@@ -1,0 +1,13 @@
+allprojects {
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+
+    ext.versions = [
+            springBoot : '2.2.2.RELEASE',
+            jackson: '2.11.0',
+            metrics: '3.1.0',
+            metricsCore: '3.0.2',
+            lombok: '1.18.12',
+            swagger: '1.6.1'
+    ]
+}
